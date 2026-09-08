@@ -52,3 +52,4 @@ Ardından tarayıcınızda `http://localhost:3000` adresini açın.
 `index.html` dosyasını çift tıklayarak veya herhangi bir tarayıcıda (Chrome, Safari, Edge vb.) sürükleyip bırakarak doğrudan görüntüleyebilirsiniz.
 
 # naragro-3
+# naragro-2
