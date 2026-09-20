@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const defaultBannerHTML = 'Hover or tap on any market participant to explore Naragro\'s integrated agricultural supply network.';
+  const defaultBannerHTML = 'Tap on any market participant to explore Naragro\'s integrated agricultural supply network.';
 
   function activateNode(nodeId) {
     flowGroups.forEach(flow => {
