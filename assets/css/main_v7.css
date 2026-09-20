@@ -3160,11 +3160,13 @@ section {
   overflow: hidden;
   position: relative;
   width: 100%;
-  padding: 20px 0;
+  padding: 16px 0;
   margin-bottom: 25px;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
   user-select: none;
+  contain: paint;
+  isolation: isolate;
 }
 
 .references-marquee-track {
@@ -3178,7 +3180,7 @@ section {
   gap: 32px;
   padding-right: 32px;
   flex-shrink: 0;
-  animation: marqueeScroll 36s linear infinite;
+  animation: marqueeScroll 38s linear infinite;
   will-change: transform;
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
@@ -3186,8 +3188,16 @@ section {
   -webkit-backface-visibility: hidden;
 }
 
-.references-marquee-wrapper:hover .marquee-group {
+.references-marquee-wrapper:hover .marquee-group,
+.references-marquee-track:hover .marquee-group {
   animation-play-state: paused;
+}
+
+@media (hover: none) {
+  .references-marquee-wrapper:hover .marquee-group,
+  .references-marquee-track:hover .marquee-group {
+    animation-play-state: running;
+  }
 }
 
 @keyframes marqueeScroll {
@@ -3212,7 +3222,8 @@ section {
   border-radius: 12px;
   border: 1px solid #e2e8f0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-  transition: all 0.3s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
 .marquee-item img {
@@ -3220,14 +3231,13 @@ section {
   max-width: 120px;
   object-fit: contain;
   filter: grayscale(100%) opacity(0.75);
-  transition: all 0.3s ease;
+  transition: filter 0.2s ease, opacity 0.2s ease;
   pointer-events: none;
 }
 
 .marquee-item:hover {
-  border-color: #7c2637;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(124, 38, 55, 0.12);
+  border-color: #762638;
+  box-shadow: 0 4px 14px rgba(118, 38, 56, 0.15);
 }
 
 .marquee-item:hover img {
