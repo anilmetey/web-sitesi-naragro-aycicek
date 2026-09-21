@@ -994,18 +994,6 @@
   <!-- Template Main JS File -->
   <script src="/assets/js/main.js?v=6.1"></script>
 
-  <script>
-    // Fallback for any missing asset image
-    document.addEventListener('error', function(e) {
-      if (e.target.tagName === 'IMG' && !e.target.dataset.fallback) {
-        e.target.dataset.fallback = '1';
-        var src = e.target.getAttribute('src');
-        if (src && !src.startsWith('http')) {
-          e.target.src = 'https://anilmetey.github.io/web-sitesi-naragro-aycicek/' + src.replace(/^\//, '');
-        }
-      }
-    }, true);
-  </script>
 </body>
 
 </html>
